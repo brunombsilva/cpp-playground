@@ -22,8 +22,6 @@ set BAZEL_VC=C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC
 set BAZEL_SH=C:\tools\msys64\usr\bin\bash.exe
 ```
 
-Install [Windows 10 SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk).
-
 # Run
 
 ```
