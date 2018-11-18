@@ -27,3 +27,9 @@ set BAZEL_SH=C:\tools\msys64\usr\bin\bash.exe
 ```
 bazel run hello-world
 ```
+
+# Test
+
+```
+bazel test ...:all
+```
