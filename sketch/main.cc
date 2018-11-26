@@ -1,22 +1,23 @@
 #include <iostream>
 #include <climits>
 #include <vector>
-#include "proto-library/addressbook.pb.h"
+#include "models/addressbook.pb.h"
 
 using namespace std;
+using namespace playground::models;
 
 int main()
 {
-    tutorial::AddressBook address_book;
+    AddressBook addressbook;
 
-    tutorial::Person* p1 = address_book.add_people();
-    tutorial::Person* p2 = address_book.add_people();
+    Person* p1 = addressbook.add_people();
+    Person* p2 = addressbook.add_people();
 
     p1->set_name("Guy");
     p1->set_email("mail@mail.com");
 
     p2->set_name("Guy 2");
 
-    cout << address_book.DebugString();
+    cout << addressbook.DebugString();
     return 0;
 }
