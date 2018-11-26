@@ -29,13 +29,13 @@ int main(int argc, char *argv[])
     LOG(WARNING) << "Languages: " << FLAGS_languages;
 
     // glog/stl_logging.h allows logging STL containers.
-    std::vector<int> x;
+    vector<int> x;
     x.push_back(1);
     x.push_back(2);
     x.push_back(3);
     LOG(INFO) << "ABC, it's easy as " << x;
 
-    std::cout << "Hello World" << std::endl;
+    cout << "Hello World" << endl;
 
     return 0;
 }

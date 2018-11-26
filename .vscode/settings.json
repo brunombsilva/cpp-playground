@@ -1,6 +1,8 @@
 {
     "C_Cpp.default.includePath": [
         "./bazel-cpp-playground/external/gtest/googletest/include/",
-        "./bazel-cpp-playground/external/glog/src/windows/"
+        "./bazel-cpp-playground/external/glog/src/windows/",
+        "./bazel-genfiles/",
+        "./bazel-cpp-playground/external/com_google_protobuf/src/",
     ]
 }

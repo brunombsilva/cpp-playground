@@ -1,17 +1,22 @@
 #include <iostream>
 #include <climits>
 #include <vector>
+#include "proto-library/addressbook.pb.h"
 
 using namespace std;
 
 int main()
 {
-    cout << INT16_MAX << endl;
-    vector<int> v = {1, 2, 3};
+    tutorial::AddressBook address_book;
 
-    v.at(2) = 5;
+    tutorial::Person* p1 = address_book.add_people();
+    tutorial::Person* p2 = address_book.add_people();
 
-    cout << v.at(2);
+    p1->set_name("Guy");
+    p1->set_email("mail@mail.com");
 
+    p2->set_name("Guy 2");
+
+    cout << address_book.DebugString();
     return 0;
 }
