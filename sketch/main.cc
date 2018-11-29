@@ -1,10 +1,10 @@
 #include <iostream>
 #include <climits>
 #include <vector>
-#include "models/addressbook.pb.h"
+#include "addressbook/addressbook.pb.h"
 
 using namespace std;
-using namespace playground::models;
+using namespace playground::addressbook;
 
 int main()
 {
