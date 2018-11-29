@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package playground.models;
+package playground.addressbook;
 
-import "models/phone_number.proto";
+import "addressbook/phone_number.proto";
 
 message Person {
   string name = 1;

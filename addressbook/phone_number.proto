@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package playground.models;
+package playground.addressbook;
 
 enum PhoneType {
     HOME = 0;
