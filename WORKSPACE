@@ -28,7 +28,27 @@ http_archive(
 
 http_archive(
     name = "com_google_protobuf",
-    sha256 = "cef7f1b5a7c5fba672bec2a319246e8feba471f04dcebfe362d55930ee7c1c30",
-    strip_prefix = "protobuf-3.5.0",
-    urls = ["https://github.com/google/protobuf/archive/v3.5.0.zip"],
+    sha256 = "2dc76b567f6f97150b8293778d4ff78c714357619619ddc1b72d40837b1741c3",
+    strip_prefix = "protobuf-3.6.1.1",
+    urls = ["https://github.com/google/protobuf/archive/v3.6.1.1.zip"],
 )
+
+http_archive(
+    name = "com_github_grpc_grpc",
+    urls = [
+        "https://github.com/grpc/grpc/archive/v1.16.1.tar.gz",
+    ],
+    strip_prefix = "grpc-1.16.1",
+    sha256 = "a5342629fe1b689eceb3be4d4f167b04c70a84b9d61cf8b555e968bc500bdb5a"
+)
+
+http_archive(
+    name = "build_stack_rules_proto",
+    urls = ["https://github.com/stackb/rules_proto/archive/4c2226458203a9653ae722245cc27e8b07c383f7.tar.gz"],
+    sha256 = "0be90d609fcefae9cc5e404540b9b23176fb609c9d62f4f9f68528f66a6839bf",
+    strip_prefix = "rules_proto-4c2226458203a9653ae722245cc27e8b07c383f7",
+)
+
+load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
+
+grpc_deps()
