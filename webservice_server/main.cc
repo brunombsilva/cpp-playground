@@ -1,6 +1,6 @@
 #include <iostream>
 #include "grpcpp/grpcpp.h"
-#include "webservice-contract/helloworld.grpc.pb.h"
+#include "webservice_contract/helloworld.grpc.pb.h"
 
 using namespace std;
 using grpc::Server;

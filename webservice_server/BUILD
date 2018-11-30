@@ -1,9 +1,9 @@
 
 cc_binary(
-    name = "webservice-client",
+    name = "webservice_server",
     srcs = ["main.cc"],
     deps = [
-        "//webservice-contract",
+        "//webservice_contract",
         "@com_github_grpc_grpc//:grpc++"
     ]
 )

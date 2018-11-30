@@ -42,6 +42,10 @@ http_archive(
     sha256 = "a5342629fe1b689eceb3be4d4f167b04c70a84b9d61cf8b555e968bc500bdb5a"
 )
 
+load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
+
+grpc_deps()
+
 http_archive(
     name = "build_stack_rules_proto",
     urls = ["https://github.com/stackb/rules_proto/archive/4c2226458203a9653ae722245cc27e8b07c383f7.tar.gz"],
@@ -49,6 +53,47 @@ http_archive(
     strip_prefix = "rules_proto-4c2226458203a9653ae722245cc27e8b07c383f7",
 )
 
-load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
 
-grpc_deps()
+git_repository(
+    name = "io_bazel_rules_python",
+    remote = "https://github.com/bazelbuild/rules_python.git",
+    commit = "f3a6a8d00a51a1f0e6d61bc7065c19fea2b3dd7a",
+    # TODO: sha256:
+)
+
+load("@io_bazel_rules_python//python:pip.bzl", "pip_repositories")
+
+pip_repositories()
+
+load("@io_bazel_rules_python//python:pip.bzl", "pip_import")
+
+
+#Python GRPC
+
+pip_import(
+	name = "protobuf_py_deps",
+	requirements = "@build_stack_rules_proto//python/requirements:protobuf.txt",
+)
+
+load("@protobuf_py_deps//:requirements.bzl", protobuf_pip_install = "pip_install")
+
+protobuf_pip_install()
+
+pip_import(
+   name = "grpc_py_deps",
+   requirements = "@build_stack_rules_proto//python:requirements.txt",
+)
+
+load("@grpc_py_deps//:requirements.bzl", grpc_pip_install = "pip_install")
+
+grpc_pip_install()
+
+#/Python GRPC
+
+pip_import(
+   name = "my_deps",
+   requirements = "//webservice_client_python:requirements.txt",
+)
+
+load("@my_deps//:requirements.bzl", "pip_install")
+pip_install()
