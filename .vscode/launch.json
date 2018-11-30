@@ -8,7 +8,7 @@
             "name": "(macOS) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/bazel-bin/sketch/sketch",
+            "program": "${workspaceFolder}/bazel-bin/webservice_client/webservice_client",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
