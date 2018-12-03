@@ -1,0 +1,21 @@
+version: "3.0"
+services:
+  webservice_server:
+    build:
+      context: .
+      args:
+        - PROJECT=webservice_server
+    ports:
+      - '50051:50051'
+
+  webservice_client:
+    build:
+      context: .
+      args:
+        - PROJECT=webservice_client
+
+  hello-world:
+    build:
+      context: .
+      args:
+        - PROJECT=hello-world
