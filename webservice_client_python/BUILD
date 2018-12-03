@@ -1,10 +1,4 @@
-
-load(
-  "@io_bazel_rules_python//python:python.bzl",
-  "py_binary", "py_library", "py_test",
-)
-
-load("@my_deps//:requirements.bzl", "requirement")
+#load("@my_deps//:requirements.bzl", "requirement")
 
 load("@build_stack_rules_proto//python:python_grpc_library.bzl", "python_grpc_library")
 
@@ -20,8 +14,6 @@ py_binary(
   srcs = glob(["*.py"]),
   main = "client.py",
   deps = [
-    ":grpc_python",
-    requirement("grpcio-tools"),
-    requirement("googleapis-common-protos"),
+    ":grpc_python"
     ]
 )

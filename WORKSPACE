@@ -89,11 +89,3 @@ load("@grpc_py_deps//:requirements.bzl", grpc_pip_install = "pip_install")
 grpc_pip_install()
 
 #/Python GRPC
-
-pip_import(
-   name = "my_deps",
-   requirements = "//webservice_client_python:requirements.txt",
-)
-
-load("@my_deps//:requirements.bzl", "pip_install")
-pip_install()
